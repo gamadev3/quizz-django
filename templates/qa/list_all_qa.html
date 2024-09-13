@@ -1,0 +1,27 @@
+{% extends 'global/base.html' %}
+
+{% block title %} - Escolha uma Categoria {% endblock title %}
+
+{% block content %}
+<h2>Bem vindo ao sistema de Quizz </h2>
+
+<h4>Escolha uma categoria: </h4>
+
+<table class="table table-hover">
+    <thead>
+        <th>Categoria</th>
+        <th>Quantidade</th>
+        <th>Responder</th>
+    </thead>
+    <tbody>
+        {% for categoria in categorias %}
+        <tr>
+            <td>{{ categoria.nome }}</td>
+            <td>{{ categoria.qtd_perguntas }}</td>
+            <td><a href="{% url 'perguntas_por_categoria' categoria.id %}" class="btn btn-success">Acessar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+# ambiente virtual
+.venv
+
+# bd
+*.sqlite3
+
+
+# arquivos 
+*.log
+*.pot
+*.pyc
+__pycache__
