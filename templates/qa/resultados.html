@@ -1,5 +1,5 @@
 {% extends 'global/base.html' %}
-
+{% load static %}
 {% block title %} - Resultado! {% endblock title %}
 
 {% block content %}
@@ -30,6 +30,7 @@
 {% else %}
 <br>
 <h4>Que pena, você não acertou nenhuma!</h4>
+<img src="{% static 'img/cry.png' %}" alt="" width="500" height="400">
 <a href="{% url 'list_qa' %}">Voltar</a>
 {% endif %}
 {% endblock content %}
