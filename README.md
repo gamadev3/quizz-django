@@ -4,15 +4,6 @@
 Projeto desenvolvido para o bootcamp da Univerisade do Sagrado Coração de Bauru/SP - 2024.
 Curso: Análise e Desenvolvimento de Sistemas
 
-
-
-
-
-
-
-
-
-
 ## Deploy
 
 Para fazer o deploy desse projeto localmente, certifique-se que tem o Python instalado em sua máquina:
@@ -32,6 +23,12 @@ Para fazer o deploy desse projeto localmente, certifique-se que tem o Python ins
     pip install -r requirements.txt
 ```
 4. Aguarde a instalação e quando acabar, execute:
+```bash
+    python manage.py makemigrations
+```
+```bash
+    python manage.py migrate
+```
 ```bash
     python manage.py runserver
 ```
