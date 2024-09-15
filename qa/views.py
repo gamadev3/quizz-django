@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.db.models import Count
 from qa.models import Categoria, Resposta
+from datetime import datetime
 
 def list_all_qa(request):
     categorias = Categoria.objects.annotate(qtd_perguntas=Count('perguntas'))
@@ -27,6 +28,8 @@ def listar_perguntas_categoria(request, id_categoria):
 
 def validar_respostas(request):
     if request.method == 'POST':
+        data_envio = datetime.now().strftime('%d/%m/%Y - %H:%M:%S')
+        print(data_envio)
         respostas_ids = []
         qtd_respostas_certas = 0
 
@@ -42,4 +45,11 @@ def validar_respostas(request):
             if Resposta.objects.get(id=resposta).e_correta:
                 qtd_respostas_certas += 1
 
-    return HttpResponse(qtd_respostas_certas)
+    return render(
+        request,
+        'qa/resultados.html',
+        {
+            'qtd_acertos': qtd_respostas_certas,
+            'dia_atual': data_envio
+        }
+    )
