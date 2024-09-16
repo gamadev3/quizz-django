@@ -17,6 +17,8 @@
 
     <label for="txt_qtd_acertos" class="form-label">Acertos: </label>
     <input type="text" name="txt_qtd_acertos" id="txt_qtd_acertos" class="form-control" value="{{ qtd_acertos }}" disabled>
+    <label for="txt_tempo" class="form-label">Tempo: </label>
+    <input type="text" name="txt_tempo" id="txt_tempo" class="form-control" value="{{ tempo }} segundos" disabled>
     <br>
     <button type="submit" class="btn btn-success">Salvar Resultado</button>
 
@@ -30,6 +32,7 @@
 {% else %}
 <br>
 <h4>Que pena, você não acertou nenhuma!</h4>
+<p>Você demorou {{ tempo }} segundo(s) para responder as questões.</p>
 <img src="{% static 'img/cry.png' %}" alt="" width="500" height="400">
 <a href="{% url 'list_qa' %}">Voltar</a>
 {% endif %}

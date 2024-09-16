@@ -1,5 +1,5 @@
 {% extends 'global/base.html' %}
-
+{% load static %}
 {% block title %} - {{categoria.nome}} {% endblock title %}
 
 {% block content %}
@@ -45,11 +45,15 @@
     
         {% endfor %}
         <br>
-        <button type="submit" class="btn btn-success" style="width: 100%;">Enviar</button>
+        Cronometro: <input type="text" name="txt_cronometro" id="input_contador" value="0" style="border: none;">
+        <button type="submit" class="btn btn-success" style="width: 100%;" onclick="pararContador()">Enviar</button>
     </form>
     </div>
 
     
 
 </ul>
+{% block js %}
+<script src="{% static 'js/cronometro.js' %}"></script>
+{% endblock js %}
 {% endblock content %}

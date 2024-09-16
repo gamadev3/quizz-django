@@ -29,6 +29,8 @@ def listar_perguntas_categoria(request, id_categoria):
 def validar_respostas(request):
     if request.method == 'POST':
         data_envio = datetime.now().strftime('%d/%m/%Y - %H:%M:%S')
+        tempo = request.POST.get('txt_cronometro')
+        print(tempo)
         print(data_envio)
         respostas_ids = []
         qtd_respostas_certas = 0
@@ -50,6 +52,7 @@ def validar_respostas(request):
         'qa/resultados.html',
         {
             'qtd_acertos': qtd_respostas_certas,
-            'dia_atual': data_envio
+            'dia_atual': data_envio,
+            'tempo': tempo
         }
     )
