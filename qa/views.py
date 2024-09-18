@@ -3,6 +3,10 @@ from django.db.models import Count
 from qa.models import Categoria, Resposta
 from datetime import datetime
 
+
+def exibir_pagina_inicial(request):
+    return render(request, 'qa/pagina_inicial.html')
+
 def list_all_qa(request):
     categorias = Categoria.objects.annotate(qtd_perguntas=Count('perguntas'))
 
