@@ -1,10 +1,10 @@
 
-# Projeto Quizz - Unisagrado
+# 1. Projeto Quizz - Unisagrado
 
 Projeto desenvolvido para o bootcamp da Univerisade do Sagrado Coração de Bauru/SP - 2024.
 Curso: Análise e Desenvolvimento de Sistemas
 
-## Deploy
+## 1.1. Deploy
 
 Para fazer o deploy desse projeto localmente, certifique-se que tem o Python instalado em sua máquina:
 
@@ -22,24 +22,30 @@ Para fazer o deploy desse projeto localmente, certifique-se que tem o Python ins
 ```bash
     pip install -r requirements.txt
 ```
-4. Aguarde a instalação e quando acabar, execute:
+4. Aguarde a instalação e quando acabar, execute os comandos para criar o banco de dados:
 ```bash
     python manage.py makemigrations
 ```
 ```bash
     python manage.py migrate
 ```
+
+5. Popular o banco de dados:
+```bash
+    python manage.py loaddata dados.json
+```
+6. Inicie o servidor:
 ```bash
     python manage.py runserver
 ```
-5. Abra o seu navegador preferido (google chrome, firefox, edge) e acesse:
+7. Abra o seu navegador preferido (google chrome, firefox, edge) e acesse:
 ```html
     http://127.0.0.1:8000/qa
 ```
 
 
 
-## Stack utilizada
+## 1.2. Stack utilizada
 
 **Front-end:** HTML, CSS, JS, Bootstrap
 
