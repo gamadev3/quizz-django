@@ -1,0 +1,727 @@
+[
+    {
+        "model": "qa.categoria",
+        "pk": 1,
+        "fields": {
+            "nome": "Geografia"
+        }
+    },
+    {
+        "model": "qa.categoria",
+        "pk": 2,
+        "fields": {
+            "nome": "História"
+        }
+    },
+    {
+        "model": "qa.categoria",
+        "pk": 3,
+        "fields": {
+            "nome": "Ciência"
+        }
+    },
+    {
+        "model": "qa.categoria",
+        "pk": 4,
+        "fields": {
+            "nome": "Literatura"
+        }
+    },
+    {
+        "model": "qa.categoria",
+        "pk": 5,
+        "fields": {
+            "nome": "Matemática"
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 1,
+        "fields": {
+            "enunciado": "Qual é a capital da França?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 1
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 1,
+        "fields": {
+            "pergunta": 1,
+            "resposta": "Berlim",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 2,
+        "fields": {
+            "pergunta": 1,
+            "resposta": "Madri",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 3,
+        "fields": {
+            "pergunta": 1,
+            "resposta": "Paris",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 4,
+        "fields": {
+            "pergunta": 1,
+            "resposta": "Lisboa",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 2,
+        "fields": {
+            "enunciado": "Quem foi o primeiro presidente dos Estados Unidos?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 2
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 5,
+        "fields": {
+            "pergunta": 2,
+            "resposta": "Abraham Lincoln",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 6,
+        "fields": {
+            "pergunta": 2,
+            "resposta": "George Washington",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 7,
+        "fields": {
+            "pergunta": 2,
+            "resposta": "Thomas Jefferson",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 8,
+        "fields": {
+            "pergunta": 2,
+            "resposta": "John Adams",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 3,
+        "fields": {
+            "enunciado": "Qual é a fórmula da água?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 3
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 9,
+        "fields": {
+            "pergunta": 3,
+            "resposta": "CO2",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 10,
+        "fields": {
+            "pergunta": 3,
+            "resposta": "H2O",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 11,
+        "fields": {
+            "pergunta": 3,
+            "resposta": "O2",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 12,
+        "fields": {
+            "pergunta": 3,
+            "resposta": "NaCl",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 4,
+        "fields": {
+            "enunciado": "Qual é o autor de 'Dom Quixote'?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 4
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 13,
+        "fields": {
+            "pergunta": 4,
+            "resposta": "Miguel de Cervantes",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 14,
+        "fields": {
+            "pergunta": 4,
+            "resposta": "J.K. Rowling",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 15,
+        "fields": {
+            "pergunta": 4,
+            "resposta": "Machado de Assis",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 16,
+        "fields": {
+            "pergunta": 4,
+            "resposta": "Mark Twain",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 5,
+        "fields": {
+            "enunciado": "Qual é o valor de π (pi) com duas casas decimais?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 5
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 17,
+        "fields": {
+            "pergunta": 5,
+            "resposta": "3.14",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 18,
+        "fields": {
+            "pergunta": 5,
+            "resposta": "3.15",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 19,
+        "fields": {
+            "pergunta": 5,
+            "resposta": "3.16",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 20,
+        "fields": {
+            "pergunta": 5,
+            "resposta": "3.13",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 6,
+        "fields": {
+            "enunciado": "Qual é a moeda do Japão?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 1
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 21,
+        "fields": {
+            "pergunta": 6,
+            "resposta": "Yen",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 22,
+        "fields": {
+            "pergunta": 6,
+            "resposta": "Won",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 23,
+        "fields": {
+            "pergunta": 6,
+            "resposta": "Dólar",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 24,
+        "fields": {
+            "pergunta": 6,
+            "resposta": "Euro",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 7,
+        "fields": {
+            "enunciado": "Quando começou a Primeira Guerra Mundial?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 2
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 25,
+        "fields": {
+            "pergunta": 7,
+            "resposta": "1914",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 26,
+        "fields": {
+            "pergunta": 7,
+            "resposta": "1939",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 27,
+        "fields": {
+            "pergunta": 7,
+            "resposta": "1918",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 28,
+        "fields": {
+            "pergunta": 7,
+            "resposta": "1945",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 8,
+        "fields": {
+            "enunciado": "Qual é o elemento químico com símbolo O?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 3
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 29,
+        "fields": {
+            "pergunta": 8,
+            "resposta": "Oxigênio",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 30,
+        "fields": {
+            "pergunta": 8,
+            "resposta": "Ouro",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 31,
+        "fields": {
+            "pergunta": 8,
+            "resposta": "Ozônio",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 32,
+        "fields": {
+            "pergunta": 8,
+            "resposta": "Ósmio",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 9,
+        "fields": {
+            "enunciado": "Quem escreveu 'A Divina Comédia'?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 4
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 33,
+        "fields": {
+            "pergunta": 9,
+            "resposta": "Dante Alighieri",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 34,
+        "fields": {
+            "pergunta": 9,
+            "resposta": "William Shakespeare",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 35,
+        "fields": {
+            "pergunta": 9,
+            "resposta": "Gabriel García Márquez",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 36,
+        "fields": {
+            "pergunta": 9,
+            "resposta": "Jorge Luis Borges",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 10,
+        "fields": {
+            "enunciado": "Qual é a raiz quadrada de 16?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 5
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 37,
+        "fields": {
+            "pergunta": 10,
+            "resposta": "4",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 38,
+        "fields": {
+            "pergunta": 10,
+            "resposta": "5",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 39,
+        "fields": {
+            "pergunta": 10,
+            "resposta": "6",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 40,
+        "fields": {
+            "pergunta": 10,
+            "resposta": "3",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 11,
+        "fields": {
+            "enunciado": "Qual é o continente mais populoso?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 1
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 41,
+        "fields": {
+            "pergunta": 11,
+            "resposta": "Ásia",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 42,
+        "fields": {
+            "pergunta": 11,
+            "resposta": "África",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 43,
+        "fields": {
+            "pergunta": 11,
+            "resposta": "Europa",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 44,
+        "fields": {
+            "pergunta": 11,
+            "resposta": "América",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 12,
+        "fields": {
+            "enunciado": "Qual é o maior planeta do sistema solar?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 3
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 45,
+        "fields": {
+            "pergunta": 12,
+            "resposta": "Júpiter",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 46,
+        "fields": {
+            "pergunta": 12,
+            "resposta": "Saturno",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 47,
+        "fields": {
+            "pergunta": 12,
+            "resposta": "Terra",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 48,
+        "fields": {
+            "pergunta": 12,
+            "resposta": "Marte",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 13,
+        "fields": {
+            "enunciado": "Quem pintou a Mona Lisa?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 4
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 49,
+        "fields": {
+            "pergunta": 13,
+            "resposta": "Leonardo da Vinci",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 50,
+        "fields": {
+            "pergunta": 13,
+            "resposta": "Pablo Picasso",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 51,
+        "fields": {
+            "pergunta": 13,
+            "resposta": "Vincent van Gogh",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 52,
+        "fields": {
+            "pergunta": 13,
+            "resposta": "Claude Monet",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 14,
+        "fields": {
+            "enunciado": "Qual é a capital do Brasil?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 1
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 53,
+        "fields": {
+            "pergunta": 14,
+            "resposta": "Brasília",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 54,
+        "fields": {
+            "pergunta": 14,
+            "resposta": "Rio de Janeiro",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 55,
+        "fields": {
+            "pergunta": 14,
+            "resposta": "São Paulo",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 56,
+        "fields": {
+            "pergunta": 14,
+            "resposta": "Salvador",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.pergunta",
+        "pk": 15,
+        "fields": {
+            "enunciado": "Quem descobriu o Brasil?",
+            "dificuldade": "FA",
+            "data_criacao": "2024-09-19T00:00:00Z",
+            "categoria": 2
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 57,
+        "fields": {
+            "pergunta": 15,
+            "resposta": "Pedro Álvares Cabral",
+            "e_correta": true
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 58,
+        "fields": {
+            "pergunta": 15,
+            "resposta": "Cristóvão Colombo",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 59,
+        "fields": {
+            "pergunta": 15,
+            "resposta": "Vasco da Gama",
+            "e_correta": false
+        }
+    },
+    {
+        "model": "qa.resposta",
+        "pk": 60,
+        "fields": {
+            "pergunta": 15,
+            "resposta": "Fernão de Magalhães",
+            "e_correta": false
+        }
+    }
+]
