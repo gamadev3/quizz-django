@@ -4,36 +4,48 @@
 
 {% block content %}
 
-{% if qtd_acertos > 0 %}
-<h4>Parabéns! Você acertou: {{ qtd_acertos }} questões.</h4>
-<h5>Vamos salvar o resultado?</h5>
-<form action="#" method="post" class="form">
-    {% csrf_token %}
-    <label for="txt_nome" class="form-label">Digite seu nome: </label>
-    <input type="text" name="txt_nome" id="txt_nome" class="form-control">
-
-    <label for="txt_data" class="form-label">Data: </label>
-    <input type="datetime" name="txt_data" id="txt_data" class="form-control" value="{{dia_atual}}" disabled >
-
-    <label for="txt_qtd_acertos" class="form-label">Acertos: </label>
-    <input type="text" name="txt_qtd_acertos" id="txt_qtd_acertos" class="form-control" value="{{ qtd_acertos }}" disabled>
-    <label for="txt_tempo" class="form-label">Tempo: </label>
-    <input type="text" name="txt_tempo" id="txt_tempo" class="form-control" value="{{ tempo }} segundos" disabled>
-    <br>
-    <button type="submit" class="btn btn-success">Salvar Resultado</button>
 
 
-    <div class="float-end">
-    
-        <a href="{% url 'list_qa' %}" class="btn btn-secondary">Voltar</a>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% url 'serveListAll_css' %}">
+</head>
+
+<body>
+
+    <div id="quiz">
+        {% if qtd_acertos > 0 %}
+        <h4>Parabéns! Você acertou: {{ qtd_acertos }} questões.</h4>
+        <h5>Vamos salvar o resultado?</h5>
+        <form action="#" method="post" class="form">
+
+            <label class="txt_data" for="txt_data" class="form-label">Data: </label>
+            <input type="datetime" name="txt_data" id="txt_data" class="form-control" value="{{dia_atual}}" disabled>
+
+            <label class="txt_qtd_acertos" for="txt_qtd_acertos" class="form-label">Acertos: </label>
+            <input type="text" name="txt_qtd_acertos" id="txt_qtd_acertos" class="form-control"
+                value="{{ qtd_acertos }}" disabled>
+            <label class="txt_tempo" for="txt_tempo" class="form-label">Tempo: </label>
+            <input type="text" name="txt_tempo" id="txt_tempo" class="form-control" value="{{ tempo }} segundos"
+                disabled>
+            <br>
+            <button type="submit" class="btn btn-success">Salvar Resultado</button>
+
+
+            <div class="float-end">
+
+                <a href="{% url 'list_qa' %}" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+
     </div>
-</form>
+    {% else %}
 
-{% else %}
-<br>
-<h4>Que pena, você não acertou nenhuma!</h4>
-<p>Você demorou {{ tempo }} segundo(s) para responder as questões.</p>
-<img src="{% static 'img/cry.png' %}" alt="" width="500" height="400">
-<a href="{% url 'list_qa' %}">Voltar</a>
-{% endif %}
+    <h4>Que pena, você não acertou nenhuma!</h4>
+    <p>Você demorou {{ tempo }} segundo(s) para responder as questões.</p>
+    <img src="{% static 'img/cry.png' %}" alt="" width="500" height="400">
+    <a href="{% url 'list_qa' %}" id="btn-volt" class="btn btn-success btn-voltar">Voltar</a>
+    {% endif %}
+
+</body>
+
 {% endblock content %}

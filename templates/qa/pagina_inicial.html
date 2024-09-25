@@ -1,4 +1,80 @@
-<h2>Página Inicial</h2>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% url 'serve_css' %}">
+</head>
 
-<!-- Desenvolver aqui a página inicial, onde vai constar o campo de "Login" -->
- 
+<body>
+
+    <input class="c-checkbox" type="checkbox" id="start">
+    <input class="c-checkbox" type="checkbox" id="progress2">
+    <input class="c-checkbox" type="checkbox" id="progress3">
+    <input class="c-checkbox" type="checkbox" id="finish">
+    <div class="c-form__progress"></div>
+
+    <div class="c-formContainer">
+        
+        <form class="c-form" action="{% url 'filtrar_categorias' %}" method="GET">
+
+            <div class="c-form__group">
+                <label class="c-form__label" for="username">
+                    <input type="text" id="txt_nome" class="c-form__input" placeholder=" " pattern="[^\s]+" required>
+
+                    <label class="c-form__next" for="progress2" role="button">
+                        <span class="c-form__nextIcon"></span>
+                    </label>
+
+                    <span class="c-form__groupLabel">Coloque o seu nome de usuário</span>
+                    <b class="c-form__border"></b>
+                </label>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label" for="nivel_dificuldade">
+                    <select id="nivel_dificuldade" name="nivel_dificuldade" class="c-form__input" required>
+                        <option value="" disabled selected>Escolha o nível de dificuldade</option>
+                        <option value="FA">Fácil</option>
+                        <option value="ME">Médio</option>
+                        <option value="DI">Difícil</option>
+                    </select>
+        
+                    <label class="c-form__next" for="progress3" role="button">
+                        <span class="c-form__nextIcon"></span>
+                    </label>
+        
+                    <span class="c-form__groupLabel">Qual o nível de dificuldade?</span>
+                    <b class="c-form__border"></b>
+                </label>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label" for="fpass">
+                    <input type="text" id="fpass" class="c-form__input" placeholder=" " disabled>
+
+                    <label class="c-form__next" for="finish" role="button">
+                        <span class="c-form__nextIcon"></span>
+                    </label>
+
+                    <span class="c-form__groupLabel">Antes de iniciar você precisa saber: O tempo está sendo contato,
+                        responda o mais rápido que conseguir, boa sorte, aproveite o quiz ;)</span>
+
+                </label>
+            </div>
+
+            <script>
+                document.getElementById('finish').addEventListener('change', function () {
+                    if (this.checked) {
+                        setTimeout(function () {
+                            window.location.href = "{% url 'list_qa' %}";
+                        }, 1000); 
+                    }
+                });
+            </script>
+            
+
+            <label class="c-form__toggle" for="start">Clique para se registrar<span
+                    class="c-form__toggleIcon"></span></label>
+        </form>
+    </div>
+
+</body>
+
+</html>
