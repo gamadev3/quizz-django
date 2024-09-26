@@ -27,7 +27,7 @@ body {
     visibility: visible;
     opacity: 1;
 }
-
+ 
 .c-checkbox:nth-of-type(1):checked~.c-formContainer .c-form .c-form__group:nth-child(1) .c-form__border {
     width: 100%;
 }

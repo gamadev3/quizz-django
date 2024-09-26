@@ -9,4 +9,4 @@ urlpatterns = [
     path('qa/validar/', views.validar_respostas, name='validar_respostas'),
     path('css/template.css', views.serve_css, name='serve_css'), 
     path('qa/filtrar/', views.filtrar_categorias, name='filtrar_categorias'),   
-]
+] 

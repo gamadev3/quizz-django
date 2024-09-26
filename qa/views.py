@@ -85,7 +85,7 @@ def serve_css(request):
         return HttpResponse("CSS file not found.", status=404)
 
     with open(css_path, 'r') as css_file:
-        return HttpResponse(css_file.read(), content_type='text/css')
+        return HttpResponse(css_file.read(), content_type='text/css') 
         
 
 def serveListAll_css(request):
