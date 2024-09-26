@@ -16,6 +16,7 @@
         {% if qtd_acertos > 0 %}
         <h4>Parabéns! Você acertou: {{ qtd_acertos }} questões.</h4>
         <h5>Vamos salvar o resultado?</h5>
+
         <form action="#" method="post" class="form">
 
             <label class="txt_data" for="txt_data" class="form-label">Data: </label>
@@ -36,15 +37,15 @@
                 <a href="{% url 'list_qa' %}" class="btn btn-secondary">Voltar</a>
             </div>
         </form>
+        {% else %}
 
+        <h4>Que pena, você não acertou nenhuma!</h4>
+        <h3>Você demorou {{ tempo }} segundo(s) para responder as questões.</h3>
+        <img id="img" src="{% static 'img/img.gif' %}">
+        <a href="{% url 'list_qa' %}" id="btn-volt" class="btn btn-success btn-voltar">Voltar</a>
+        {% endif %}
     </div>
-    {% else %}
 
-    <h4>Que pena, você não acertou nenhuma!</h4>
-    <p>Você demorou {{ tempo }} segundo(s) para responder as questões.</p>
-    <img src="{% static 'img/cry.png' %}" alt="" width="500" height="400">
-    <a href="{% url 'list_qa' %}" id="btn-volt" class="btn btn-success btn-voltar">Voltar</a>
-    {% endif %}
 
 </body>
 

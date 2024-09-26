@@ -68,10 +68,10 @@ footer {
 }
 
 .btn-voltar {
-    display: block;     
-    margin-top: 20px;    
-    width: 120px;        
-    text-align: center;  
+    display: block;
+    margin-top: 20px;
+    width: 120px;
+    text-align: center;
 }
 
 .txt_data {
@@ -92,6 +92,13 @@ footer {
 
 .txt_tempo {
     float: left;
+}
+
+#img {
+    margin: 15px;
+    margin-left: 15%;
+    width: 65%;
+    height: 75%;
 }
 
 .btn-success {
