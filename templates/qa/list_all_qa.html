@@ -1,17 +1,23 @@
 {% extends 'global/base.html' %}
 
-{% block title %} - Escolha uma Categoria {% endblock title %}
+{% block title %} - Categorias Filtradas {% endblock title %}
 
 {% block content %}
-<h2>Bem vindo ao sistema de Quizz </h2>
+ 
+<head>
+    <link rel="stylesheet" type="text/css" href="{% url 'serveListAll_css' %}">
+</head>
+<h2>Bem-vindo ao sistema de Quiz</h2>
 
-<h4>Escolha uma categoria: </h4>
+<h4>Categorias para o nível de dificuldade selecionado:</h4>
 
 <table class="table table-hover">
     <thead>
-        <th>Categoria</th>
-        <th>Quantidade</th>
-        <th>Responder</th>
+        <tr>
+            <th>Categoria</th>
+            <th>Quantidade de Perguntas</th>
+            <th>Responder</th>
+        </tr>
     </thead>
     <tbody>
         {% for categoria in categorias %}
@@ -20,9 +26,12 @@
             <td>{{ categoria.qtd_perguntas }}</td>
             <td><a href="{% url 'perguntas_por_categoria' categoria.id %}" class="btn btn-success">Acessar</a></td>
         </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">Nenhuma categoria encontrada para o nível de dificuldade selecionado.</td>
+        </tr>
         {% endfor %}
     </tbody>
 </table>
+{% endblock content %} 
 
-
-{% endblock content %}

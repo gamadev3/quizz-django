@@ -3,56 +3,65 @@
 {% block title %} - {{categoria.nome}} {% endblock title %}
 
 {% block content %}
-<h3>Categoria: {{ categoria.nome }}</h3>
-<hr>
-<div class="float-end">
 
-    <a href="{% url 'list_qa' %}" class="btn btn-secondary">Voltar</a>
-</div>
-<br>
-<h5>Perguntas:</h5>
-<br>
-<ul>
-    <form action="{% url 'validar_respostas' %}" method="post">
-        {% csrf_token %}
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-        {% for pergunta in perguntas %}
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{pergunta.id}}" aria-expanded="false" aria-controls="flush-collapse{{pergunta.id}}">
-                <span class="badge text-bg-primary">{{pergunta.get_dificuldade_display}}</span>
-                    - Pergunta nº {{pergunta.id}} 
-            </button>
-          </h2>
-          <div id="flush-collapse{{pergunta.id}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                <h5>Enunciado:
+<head>
+    <link rel="stylesheet" type="text/css" href="{% url 'serveListAll_css' %}">
+</head>
+ 
+<body>
 
-                    <small class="text-body-secondary">
-                        {{pergunta.enunciado}}
-                    </small>
-                    <br>
-                </h5>
-                    {% for resposta in pergunta.respostas.all %}
-                    <input type="radio" name="resposta_{{ pergunta.id }}" id="resposta_{{ resposta.id }}" value="{{ resposta.id }}"> <label for="resposta_{{ resposta.id }}">{{ resposta.resposta }}</label><br> <br>
-                    {% endfor %}
-                
+    <h1>Simple Quiz</h1>
+    <div id="quiz">
+        <form action="{% url 'validar_respostas' %}" method="post">
+            {% csrf_token %}
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                {% for pergunta in perguntas %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse{{pergunta.id}}" aria-expanded="false"
+                            aria-controls="flush-collapse{{pergunta.id}}">
+                            <span class="badge text-bg-primary">{{pergunta.get_dificuldade_display}}</span>
+                            - Pergunta nº {{pergunta.id}}
+                        </button>
+                    </h2>
+                    <div id="flush-collapse{{pergunta.id}}" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h5>Enunciado:
+
+                                <small class="text-body-secondary">
+                                    {{pergunta.enunciado}}
+                                </small>
+                                <br>
+                            </h5>
+                            {% for resposta in pergunta.respostas.all %}
+                            <input type="radio" name="resposta_{{ pergunta.id }}" id="resposta_{{ resposta.id }}"
+                                value="{{ resposta.id }}"> <label for="resposta_{{ resposta.id }}">{{ resposta.resposta }}</label><br> <br>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p>Não há perguntas para exibir.</p>
+
+                {% endfor %} 
+                <br>
+                <footer>
+                    <p><span id="time"></span><span id="clock">Cronometro: <input type="text" name="txt_cronometro"
+                                id="input_contador" value="0" style="border: none;"></span></p>
+                </footer>
+
+                <button type="submit" class="btn btn-success" style="width: 100%;"
+                    onclick="pararContador()">Enviar</button>
+            
             </div>
-          </div>
-        </div>
-        {% empty %}
-        <p>Não há perguntas para exibir.</p>
-    
-        {% endfor %}
-        <br>
-        Cronometro: <input type="text" name="txt_cronometro" id="input_contador" value="0" style="border: none;">
-        <button type="submit" class="btn btn-success" style="width: 100%;" onclick="pararContador()">Enviar</button>
-    </form>
+        </form>
     </div>
 
-    
+</body>
 
-</ul>
 {% block js %}
 <script src="{% static 'js/cronometro.js' %}"></script>
 {% endblock js %}
