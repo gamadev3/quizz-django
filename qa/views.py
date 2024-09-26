@@ -7,7 +7,7 @@ import os
 from django.views.decorators.http import require_GET
 from django.conf import settings 
 
-
+  
 def save_result(request):
     if request.method == 'POST':
         data = request.POST.get('hidden_data')
