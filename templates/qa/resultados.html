@@ -4,12 +4,6 @@
 
 {% block content %}
 
-
-
-<head>
-    <link rel="stylesheet" type="text/css" href="{% url 'serveListAll_css' %}">
-</head>
-  
 <body>
 
     <div id="quiz">
@@ -17,8 +11,8 @@
         <h4>Parabéns! Você acertou: {{ qtd_acertos }} questões.</h4>
         <h5>Vamos salvar o resultado?</h5>
 
-        <form action="#" method="post" class="form">
-
+        <form action="{% url 'pagina_inicial' %}" method="post" class="form">
+            {% csrf_token %}
             <label class="txt_data" for="txt_data" class="form-label">Data: </label>
             <input type="datetime" name="txt_data" id="txt_data" class="form-control" value="{{dia_atual}}" disabled>
 
@@ -29,7 +23,8 @@
             <input type="text" name="txt_tempo" id="txt_tempo" class="form-control" value="{{ tempo }} segundos"
                 disabled>
             <br>
-            <button type="submit" class="btn btn-success">Salvar Resultado</button>
+            <!-- TODO: Tratar a Página para salvar -->
+            <a href="{% url 'pagina_inicial' %}" class="btn btn-success">Salvar Resultado </a>
 
 
             <div class="float-end">

@@ -2,10 +2,6 @@ from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.db.models import Count
 from qa.models import Categoria, Resposta
 from datetime import datetime
-from django.db.models import Q
-import os
-from django.views.decorators.http import require_GET
-from django.conf import settings 
 
   
 def save_result(request):
@@ -36,6 +32,9 @@ def filtrar_categorias(request):
 
 
 def exibir_pagina_inicial(request):
+    if request.method == 'GET':
+        txt_nome = request.GET.get('txt_nome')
+        print(txt_nome)
     return render(request, 'qa/pagina_inicial.html')
 
 
@@ -77,22 +76,13 @@ def validar_respostas(request):
     else:
         return HttpResponse("Método inválido", status=400) 
 
-
-def serve_css(request):
-    css_path = os.path.join(settings.BASE_DIR, 'templates', 'qa', 'css', 'template.css')
-
-    if not os.path.exists(css_path):
-        return HttpResponse("CSS file not found.", status=404)
-
-    with open(css_path, 'r') as css_file:
-        return HttpResponse(css_file.read(), content_type='text/css') 
         
 
-def serveListAll_css(request):
-    css_path = os.path.join(settings.BASE_DIR, 'templates', 'qa', 'css', 'template_listAll.css')
+# def serveListAll_css(request):
+#     css_path = os.path.join(settings.BASE_DIR, 'templates', 'qa', 'css', 'template_listAll.css')
 
-    if not os.path.exists(css_path):
-        return HttpResponse("CSS file not found.", status=404)
+#     if not os.path.exists(css_path):
+#         return HttpResponse("CSS file not found.", status=404)
 
-    with open(css_path, 'r') as css_file:
-        return HttpResponse(css_file.read(), content_type='text/css')
+#     with open(css_path, 'r') as css_file:
+#         return HttpResponse(css_file.read(), content_type='text/css')
