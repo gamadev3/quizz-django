@@ -14,6 +14,9 @@
         <form action="{% url 'pagina_inicial' %}" method="post" class="form">
             {% csrf_token %}
 
+            <label for="txt_usuario" class="form-label">Nome Jogador:</label>
+            <input type="text" class="form-control" name="txt_usuario" id="txt_usuario" disabled>
+
             <label class="txt_data" for="txt_data" class="form-label">Data: </label>
             <input type="datetime" name="txt_data" id="txt_data" class="form-control" value="{{dia_atual}}" disabled>
 
@@ -42,7 +45,8 @@
         {% endif %}
     </div>
 
-
+    {% block js %}
+    <script src="{% static 'js/recupera_usuario.js' %}"></script>
+    {% endblock js %}
 </body> 
-
 {% endblock content %}
