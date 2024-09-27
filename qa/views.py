@@ -42,6 +42,15 @@ def exibir_pagina_inicial(request):
 def list_all_qa(request):
     categorias = Categoria.objects.annotate(qtd_perguntas=Count('perguntas'))
     ranking = Ranking.objects.all().order_by('-qtd_acertos', 'tempo')[:3]
+
+    if ranking:
+        for i in ranking:
+            if i.tempo >= 60:
+                minutos = i.tempo // 60
+                segundos = i.tempo % 60
+                i.tempo_formatado = f'{minutos} minutos e {segundos} segundos'
+            else:
+                i.tempo_formatado = f'{i.tempo} segundos'
     return render(request, 'qa/list_all_qa.html', {'categorias': categorias, 'ranking': ranking})
 
 
