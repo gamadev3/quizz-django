@@ -34,9 +34,9 @@
                 <label class="c-form__label" for="nivel_dificuldade">
                     <select id="nivel_dificuldade" name="nivel_dificuldade" class="c-form__input" required>
                         <option value="" disabled selected>Escolha o nível de dificuldade</option>
-                        <option value="FA">Fácil</option>
-                        <option value="ME">Médio</option>
-                        <option value="DI">Difícil</option>
+                        {% for nivel in niveis %}
+                        <option value="{{ nivel.0 }}">{{ nivel.1 }}</option>
+                        {% endfor %}
                     </select>
         
                     <label class="c-form__next" for="progress3" role="button">

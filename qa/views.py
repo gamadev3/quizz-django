@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.db.models import Count
-from qa.models import Categoria, Resposta
+from qa.models import Categoria, Resposta, Pergunta
 from datetime import datetime
 
   
@@ -34,8 +34,9 @@ def filtrar_categorias(request):
 def exibir_pagina_inicial(request):
     if request.method == 'GET':
         txt_nome = request.GET.get('txt_nome')
+        niveis = Pergunta.Nivel.choices
         print(txt_nome)
-    return render(request, 'qa/pagina_inicial.html')
+    return render(request, 'qa/pagina_inicial.html', {'niveis': niveis})
 
 
 def list_all_qa(request):
@@ -76,13 +77,3 @@ def validar_respostas(request):
     else:
         return HttpResponse("Método inválido", status=400) 
 
-        
-
-# def serveListAll_css(request):
-#     css_path = os.path.join(settings.BASE_DIR, 'templates', 'qa', 'css', 'template_listAll.css')
-
-#     if not os.path.exists(css_path):
-#         return HttpResponse("CSS file not found.", status=404)
-
-#     with open(css_path, 'r') as css_file:
-#         return HttpResponse(css_file.read(), content_type='text/css')
