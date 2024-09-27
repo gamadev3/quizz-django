@@ -13,6 +13,7 @@
 
         <form action="{% url 'pagina_inicial' %}" method="post" class="form">
             {% csrf_token %}
+
             <label class="txt_data" for="txt_data" class="form-label">Data: </label>
             <input type="datetime" name="txt_data" id="txt_data" class="form-control" value="{{dia_atual}}" disabled>
 

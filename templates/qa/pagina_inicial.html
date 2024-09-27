@@ -68,7 +68,7 @@
             <script>
                 function criarSessao() {
                     let nome_usuario = document.getElementById('txt_nome').value
-                    localStorage.setItem('usuario', nome_usuario)
+                    sessionStorage.setItem('usuario', nome_usuario)
                 }
 
                 document.getElementById('finish').addEventListener('change', function () {
