@@ -33,9 +33,9 @@ def filtrar_categorias(request):
 
 def exibir_pagina_inicial(request):
     if request.method == 'GET':
-        txt_nome = request.GET.get('txt_nome')
         niveis = Pergunta.Nivel.choices
-        print(txt_nome)
+
+
     return render(request, 'qa/pagina_inicial.html', {'niveis': niveis})
 
 

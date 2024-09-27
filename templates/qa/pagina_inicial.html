@@ -16,7 +16,8 @@
  
     <div class="c-formContainer">
         
-        <form class="c-form" action="{% url 'filtrar_categorias' %}" method="GET">
+        <form class="c-form" action="{% url 'filtrar_categorias' %}" method="POST">
+            
             <div class="c-form__group">
                 <label class="c-form__label" for="username">
                     <input type="text" name="txt_nome" id="txt_nome" class="c-form__input" placeholder=" " pattern="[^\s]+" required>
@@ -61,21 +62,27 @@
 
                 </label>
             </div>
-
+            <label class="c-form__toggle" for="start">Clique para se registrar<span
+                class="c-form__toggleIcon"></span></label>
+            </form>
             <script>
+                function criarSessao() {
+                    let nome_usuario = document.getElementById('txt_nome').value
+                    localStorage.setItem('usuario', nome_usuario)
+                }
+
                 document.getElementById('finish').addEventListener('change', function () {
                     if (this.checked) {
+                        criarSessao();
                         setTimeout(function () {
                             window.location.href = "{% url 'list_qa' %}";
-                        }, 1000); 
+                        }, 1300); 
                     }
                 });
             </script>
             
 
-            <label class="c-form__toggle" for="start">Clique para se registrar<span
-                    class="c-form__toggleIcon"></span></label>
-        </form>
+
     </div>
 
 
