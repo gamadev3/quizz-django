@@ -1,5 +1,5 @@
 from django.contrib import admin
-from qa.models import Pergunta, Resposta, Categoria
+from qa.models import Pergunta, Resposta, Categoria, Ranking
 
 @admin.register(Pergunta)
 class PerguntaAdmin(admin.ModelAdmin):
@@ -14,3 +14,5 @@ class RespostaAdmin(admin.ModelAdmin):
 class CategoriaAdmin(admin.ModelAdmin):
     list_display = ['id', 'nome']
     list_display_links = ['nome']
+
+admin.site.register(Ranking)

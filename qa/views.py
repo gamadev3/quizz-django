@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.db.models import Count
-from qa.models import Categoria, Resposta, Pergunta
+from qa.models import Categoria, Resposta, Pergunta, Ranking
 from datetime import datetime
 
   
@@ -41,7 +41,8 @@ def exibir_pagina_inicial(request):
 
 def list_all_qa(request):
     categorias = Categoria.objects.annotate(qtd_perguntas=Count('perguntas'))
-    return render(request, 'qa/list_all_qa.html', {'categorias': categorias})
+    ranking = Ranking.objects.all().order_by('-qtd_acertos', 'tempo')[:3]
+    return render(request, 'qa/list_all_qa.html', {'categorias': categorias, 'ranking': ranking})
 
 
 def listar_perguntas_categoria(request, id_categoria):

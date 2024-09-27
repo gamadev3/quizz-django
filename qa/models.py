@@ -30,3 +30,9 @@ class Resposta(models.Model):
 
     def __str__(self):
         return f'{self.resposta} - Pergunta: {self.pergunta.enunciado}'
+    
+
+class Ranking(models.Model):
+    nome = models.CharField(max_length=200)
+    qtd_acertos = models.IntegerField()
+    tempo = models.IntegerField()
