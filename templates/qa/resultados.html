@@ -11,24 +11,26 @@
         <h4>Parabéns! Você acertou: {{ qtd_acertos }} questões.</h4>
         <h5>Vamos salvar o resultado?</h5>
 
-        <form action="{% url 'pagina_inicial' %}" method="post" class="form">
+        <form action="{% url 'salvar_resultado' %}" method="post" class="form">
             {% csrf_token %}
 
             <label for="txt_usuario" class="form-label">Nome Jogador:</label>
-            <input type="text" class="form-control" name="txt_usuario" id="txt_usuario" disabled>
+            <input type="text" class="form-control" name="txt_usuario" id="txt_usuario" >
 
             <label class="txt_data" for="txt_data" class="form-label">Data: </label>
-            <input type="datetime" name="txt_data" id="txt_data" class="form-control" value="{{dia_atual}}" disabled>
+            <input type="datetime" name="txt_data" id="txt_data" class="form-control" value="{{dia_atual}}" >
 
             <label class="txt_qtd_acertos" for="txt_qtd_acertos" class="form-label">Acertos: </label>
             <input type="text" name="txt_qtd_acertos" id="txt_qtd_acertos" class="form-control"
-                value="{{ qtd_acertos }}" disabled>
+                value="{{ qtd_acertos }}">
             <label class="txt_tempo" for="txt_tempo" class="form-label">Tempo: </label>
-            <input type="text" name="txt_tempo" id="txt_tempo" class="form-control" value="{{ tempo }} segundos"
-                disabled>
+            <input type="text" name="txt_tempo" id="txt_tempo" class="form-control" value="{{ tempo }}">
             <br>
             <!-- TODO: Tratar a Página para salvar -->
-            <a href="{% url 'pagina_inicial' %}" class="btn btn-success">Salvar Resultado </a>
+            <a href="{% url 'salvar_resultado' %}" class="btn btn-success">Salvar Resultado </a>
+            <button type="submit">Salvar</button>
+            <a href="{% url 'list_qa' %}" class="btn btn-success">Pagina Inicial </a>
+            
 
 
             <div class="float-end">

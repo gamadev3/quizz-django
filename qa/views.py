@@ -1,21 +1,9 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Count
 from qa.models import Categoria, Resposta, Pergunta, Ranking
 from datetime import datetime
 
   
-def save_result(request):
-    if request.method == 'POST':
-        data = request.POST.get('hidden_data')
-        acertos = request.POST.get('hidden_acertos')
-        tempo = request.POST.get('hidden_tempo')
-
-        return render(request, 'qa/result_saved.html', {
-            'data': data,
-            'acertos': acertos,
-            'tempo': tempo,
-        })
-
 
 def filtrar_categorias(request):
     nivel_dificuldade = request.GET.get('nivel_dificuldade')
@@ -84,6 +72,23 @@ def validar_respostas(request):
             'dia_atual': data_envio,
             'tempo': tempo
         })
-    else:
-        return HttpResponse("Método inválido", status=400) 
+
+
+
+def salvar_resultado(request):
+    if request.method == 'POST':
+        data = request.POST.get('txt_data')
+        acertos = request.POST.get('txt_qtd_acertos')
+        tempo = request.POST.get('txt_tempo')
+        jogador = request.POST.get('txt_usuario')
+
+        novo_ranking = Ranking(
+            nome=jogador,
+            qtd_acertos=int(acertos),
+            tempo=int(tempo),
+            data=datetime.strptime(data, "%d/%m/%Y - %H:%M:%S").date()
+        )
+
+        novo_ranking.save()
+        return redirect('list_qa')
 

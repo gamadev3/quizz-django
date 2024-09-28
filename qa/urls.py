@@ -7,4 +7,5 @@ urlpatterns = [
     path('qa/categorias/<int:id_categoria>/', views.listar_perguntas_categoria, name='perguntas_por_categoria'),
     path('qa/validar/', views.validar_respostas, name='validar_respostas'),
     path('qa/filtrar/', views.filtrar_categorias, name='filtrar_categorias'),   
+    path('qa/salvar/', views.salvar_resultado, name="salvar_resultado"),
 ] 

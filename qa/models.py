@@ -36,3 +36,4 @@ class Ranking(models.Model):
     nome = models.CharField(max_length=200)
     qtd_acertos = models.IntegerField()
     tempo = models.IntegerField()
+    data = models.DateTimeField(null=True, blank=True)
